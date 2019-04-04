@@ -17,6 +17,18 @@
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/04/03/about-update/</guid>
+      <description>Here I listed some functions that may be useful for wesite update:
+Create the content file and paste the path to create the content in the page.
+new_content(path, kind = &amp;quot;&amp;quot;, open = interactive())  Simply imput the title for the new update post, a rm file will be created. The file extention could be choosed by define the ext = &amp;ldquo;.Rmd&amp;rdquo; or &amp;ldquo;.md&amp;rdquo;.
+new_post(title, kind = &amp;quot;&amp;quot;, open = interactive(), author = getOption(&amp;quot;blogdown.</description>
+    </item>
+    
+    <item>
+      <title>job hunting</title>
+      <link>/2019/04/03/job-hunting/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/04/03/job-hunting/</guid>
       <description></description>
     </item>
     

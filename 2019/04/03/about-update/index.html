@@ -22,6 +22,11 @@
 
 
 
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
 <link rel="stylesheet" href="/css/fonts.css" media="all">
 <link rel="stylesheet" href="/css/main.css" media="all">
 
@@ -59,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">0 min read</span>
+    <span class="article-duration">1 min read</span>
     
 
     <h1 class="article-title">about update</h1>
@@ -69,7 +74,21 @@
     
 
     <div class="article-content">
-      
+      <p>Here I listed some functions that may be useful for wesite update:</p>
+
+<p>Create the content file and paste the path to create the content in the page.</p>
+
+<pre><code class="language-r">new_content(path, kind = &quot;&quot;, open = interactive())
+</code></pre>
+
+<p>Simply imput the title for the new update post, a rm file will be created. The file extention could be choosed by define the ext = &ldquo;.Rmd&rdquo; or &ldquo;.md&rdquo;.</p>
+
+<pre><code class="language-r">new_post(title, kind = &quot;&quot;, open = interactive(), author = getOption(&quot;blogdown.author&quot;), 
+    categories = NULL, tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
+    title_case = getOption(&quot;blogdown.title_case&quot;), subdir = getOption(&quot;blogdown.subdir&quot;, 
+        &quot;post&quot;), ext = getOption(&quot;blogdown.ext&quot;, &quot;.md&quot;))
+</code></pre>
+
     </div>
   </article>
 
@@ -91,6 +110,18 @@
 
     </div>
     
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
 
     
 
