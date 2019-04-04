@@ -29,7 +29,7 @@ new_post(title, kind = &amp;quot;&amp;quot;, open = interactive(), author = getO
       <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/04/03/job-hunting/</guid>
-      <description></description>
+      <description>Yesterday, I was doing the job hunting on Indeed. But, there are so many job openings with so many information. Then I realized that, I can extract some information from these job descriptions, including the frequently mentioned keywords, word paires and word clouds for each searching key words. Later, I can write my resume that emphasizes my skills match the frequently mentioned keywords, it will be easier for me to modify my resume based on different job descriptions.</description>
     </item>
     
     <item>

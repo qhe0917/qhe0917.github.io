@@ -59,7 +59,7 @@
 
   <article class="article">
     
-    <span class="article-duration">0 min read</span>
+    <span class="article-duration">1 min read</span>
     
 
     <h1 class="article-title">job hunting</h1>
@@ -72,7 +72,14 @@
       
 
 
-
+<p>Yesterday, I was doing the job hunting on Indeed. But, there are so many job openings with so many information. Then I realized that, I can extract some information from these job descriptions, including the frequently mentioned keywords, word paires and word clouds for each searching key words. Later, I can write my resume that emphasizes my skills match the frequently mentioned keywords, it will be easier for me to modify my resume based on different job descriptions. Moreover, I can learn the skills that been frequenlty mentioned, before I graduate. It will also easier for me to filter the jobs contained some keyworks or without some keywords. So, I deceide to write a function that can scrape the job descriptions from indeed based on different searching keywords. Then, do the text mining from the saved information.</p>
+<p>Here, is my attacking plan: 1. scrape website. a. using indeed api? Already submitted an API search application, but no reply yet. b. backup plan, directly scrape date from website. This method will be slower, and the data cleaning will be more difficult.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>keywords rank and frequency. a.filter(articles，prepositions，conjunction). b.count and rank.</p></li>
+<li><p>word pairs rank.</p></li>
+<li><p>word cloud.</p></li>
+<li><p>keywords counts change with time. a.data scraping update everyday.* (need to know how to do it.)</p></li>
+</ol>
 
     </div>
   </article>
