@@ -72,8 +72,16 @@
       
 
 
-<p>Yesterday, I was doing the job hunting on Indeed. But, there are so many job openings with so many information. Then I realized that, I can extract some information from these job descriptions, including the frequently mentioned keywords, word paires and word clouds for each searching key words. Later, I can write my resume that emphasizes my skills match the frequently mentioned keywords, it will be easier for me to modify my resume based on different job descriptions. Moreover, I can learn the skills that been frequenlty mentioned, before I graduate. It will also easier for me to filter the jobs contained some keyworks or without some keywords. So, I deceide to write a function that can scrape the job descriptions from indeed based on different searching keywords. Then, do the text mining from the saved information.</p>
-<p>Here, is my attacking plan: 1. scrape website. a. using indeed api? Already submitted an API search application, but no reply yet. b. backup plan, directly scrape date from website. This method will be slower, and the data cleaning will be more difficult.</p>
+<p>Yesterday, I was doing the job hunting on Indeed. But, there are so many job openings with so many information. Then I realized that, I can extract some information from these job descriptions, including the frequently mentioned keywords, word paires and word clouds for each searching key words. Later, I can write my resume that emphasizes my skills match the frequently mentioned keywords, it will be easier for me to modify my resume based on different job descriptions. Moreover, I can learn the skills that been frequenlty mentioned, before I graduate. It will also be easier for me to filter the jobs contained some keyworks or without some keywords. So, I deceide to write a function that can scrape the job descriptions from indeed based on different searching keywords. Then, do the text mining from the saved information.</p>
+<p>Here, is my attacking plan:</p>
+<ol style="list-style-type: decimal">
+<li>scrape website.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>using indeed api?</p></li>
+<li><p>backup plan, directly scrape date from website.</p></li>
+</ol>
+<p>This method will be slower, and the data cleaning will be more difficult.</p>
 <ol start="2" style="list-style-type: decimal">
 <li><p>keywords rank and frequency. a.filter(articles，prepositions，conjunction). b.count and rank.</p></li>
 <li><p>word pairs rank.</p></li>

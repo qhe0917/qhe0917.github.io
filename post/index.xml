@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Let&#39;s see what we can do with R!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>stringr</title>
+      <link>/2019/04/10/stringr/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/04/10/stringr/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Introduction to SQL</title>
@@ -18,6 +27,17 @@
       
       <guid>/2019/04/09/introduction-to-sql/</guid>
       <description>I was planning to write an introduction about SQL to include some basic information about it, what does it do, what is the differences between other programming languages, and what is the advantages. But after I opened the wiki page, there are so many new terms in the description, each needs a further explanation for me to understand the content. Then I realize, it&amp;rsquo;s almost impossible to understand all these terms unless I learn this language first and process some datasets with different languages.</description>
+    </item>
+    
+    <item>
+      <title>Wrap up a package</title>
+      <link>/2019/04/09/wrap-up-a-package/</link>
+      <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/04/09/wrap-up-a-package/</guid>
+      <description>Notes about package wrap up.
+Documentation: Start from function documentation: roxygen2 an example:
+##&#39; @name plot_weather ##&#39; @title Plot Weather Information on Map ##&#39; @description plot an element of an weather informaton of multiple airports on map ##&#39; @usage plot_weather(id_vector, type, label = T, number = T) ##&#39; @param id_vector a vector of multiple airport codes ##&#39; @param type a vector of weather elements ##&#39; @details ##&#39; label = TRUE: label airport code on the plot ##&#39; ##&#39; number = TRUE: this element is numeric ##&#39; @examples ##&#39; plot_weather(c(&amp;quot;KAMW&amp;quot;, &amp;quot;KAIO&amp;quot;, &amp;quot;KCID&amp;quot;, &amp;quot;KCNC&amp;quot;), ##&#39; type = &amp;quot;weather&amp;quot;, ##&#39; label = T, number = F) ##&#39; @import ggplot2 ggmap maps mapdata ##&#39; @export  @title upper case for first letter every word</description>
     </item>
     
     <item>
@@ -48,6 +68,15 @@ new_post(title, kind = &amp;quot;&amp;quot;, open = interactive(), author = getO
       
       <guid>/1/01/01/</guid>
       <description>Introduction to SQL       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/</guid>
+      <description>Wrap up a package       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
   </channel>
