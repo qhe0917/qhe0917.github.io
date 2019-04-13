@@ -22,6 +22,11 @@
 
 
 
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
 <link rel="stylesheet" href="/css/fonts.css" media="all">
 <link rel="stylesheet" href="/css/main.css" media="all">
 
@@ -59,7 +64,7 @@
 
   <article class="article">
     
-    <span class="article-duration">1 min read</span>
+    <span class="article-duration">4 min read</span>
     
 
     <h1 class="article-title">job hunting</h1>
@@ -82,12 +87,107 @@
 <li><p>backup plan, directly scrape date from website.</p></li>
 </ol>
 <p>This method will be slower, and the data cleaning will be more difficult.</p>
+<div id="apr-13-update" class="section level3">
+<h3>Apr 13 update</h3>
+<div id="first-step-check." class="section level4">
+<h4>First step check.</h4>
+<p>Can’t get the API from this website, so I end up using the web scraping to get all the information. The processing is slow especially when internet is slow. May need to add more constrains when searching with popular keywords. But by now, it works fine with the keywords I am interested in.</p>
+<pre class="r"><code>library(rvest)
+library(tidyverse)
+library(future)
+library(stringr)</code></pre>
+<pre class="r"><code>getjobs&lt;-function(keyword = &quot;nano raman data&quot;, loc = NULL){
+  #generate all pages links
+  fpage&lt;-function(keyword = keyword, loc = loc){
+    key&lt;- str_replace_all(keyword, &quot;\\s&quot;, &quot;+&quot;) 
+    url&lt;- str_replace_all(&quot;https://www.indeed.com/jobs?q=keyword&amp;start=&quot;, &quot;keyword&quot;,key ) %&gt;% paste0(loc)
+    old &lt;- 0
+    new &lt;- 1
+    i=0
+    link&lt;-NA
+    while (old != new){
+      old&lt;-new
+      i=i+10
+      urlnew &lt;- paste0(url, i)
+      new &lt;- read_html(urlnew) %&gt;% 
+        html_node(&quot;div.title &gt; a&quot;) %&gt;% 
+        html_attr(name=&quot;href&quot;) 
+      link&lt;-append(link,urlnew)
+      print(i/10)
+    }
+    return(link[-1])
+  }
+  
+  links&lt;-fpage(keyword,loc)
+  
+  #search job links from each page
+  fjob &lt;- function(url = NULL){
+    html &lt;- read_html(url) %&gt;% 
+      html_nodes(&quot;div.title &gt; a&quot;) %&gt;% 
+      html_attr(name=&quot;href&quot;) %&gt;% 
+      lapply(function(x) paste0(&quot;https://indeed.com&quot;,x))%&gt;% 
+      unlist %&gt;% 
+      data.frame() %&gt;% 
+      set_names(&quot;joblinks&quot;)
+  }
+  linksjob&lt;- sapply(links, fjob) %&gt;%
+    unlist() %&gt;% 
+    as.character() %&gt;% 
+    unique()
+  
+  #text scraping
+  jobtexts&lt;-function(link = NULL){
+    nodes &lt;- read_html(link) 
+    jobdes&lt;- html_nodes(nodes,&quot;#jobDescriptionText&quot;) %&gt;% 
+      html_text() 
+    jobdes &lt;- ifelse(is.null(jobdes), jobdes &lt;- NA, jobdes)
+    jobtitle&lt;- html_nodes(nodes,&quot;div.jobsearch-DesktopStickyContainer &gt; h3&quot;) %&gt;% 
+      html_text() 
+    jobtitle&lt;- ifelse(is.null(jobtitle), jobtitle &lt;- NA, jobtitle)
+    jobloc&lt;- html_nodes(nodes,&quot;div.icl-u-xs-mt--xs.icl-u-textColor--secondary.jobsearch-JobInfoHeader-subtitle.jobsearch-DesktopStickyContainer-subtitle&quot;) %&gt;% 
+      html_text()
+    jobloc&lt;- ifelse(is.null(jobloc), jobloc &lt;- NA, jobloc)
+    jobdate &lt;- html_nodes(nodes,&quot;div.jobsearch-JobMetadataFooter&quot;) %&gt;% 
+      html_text()
+    jobdate &lt;- if(is.null(jobdate)){NA} else {
+      if(str_detect(jobdate,&quot;days&quot;)){
+      as.character(Sys.Date()-as.integer(str_match(jobdate,&quot;\\d{1,}&quot;)))} else {
+        if(str_detect(jobdate,&quot;month&quot;)) {
+          as.character(Sys.Date()-as.integer(str_match(jobdate,&quot;\\d{1,}&quot;))*30)} else {
+            as.character(Sys.Date())}}}
+    a&lt;-c(jobtitle,jobloc,jobdes,jobdate,link)
+    return(a)
+  }
+  
+  textsall&lt;- sapply(linksjob, jobtexts) %&gt;% t() %&gt;% 
+    data.frame(row.names = NULL,stringsAsFactors =F) %&gt;% 
+    set_names(nm = c(&quot;title&quot;,&quot;info&quot;,&quot;description&quot;,&quot;date&quot;,&quot;link&quot;))
+  
+  allinfo &lt;- list(links,linksjob,textsall)
+  
+  return(allinfo)
+}
+
+all&lt;-getjobs(&quot;nano raman data&quot;)</code></pre>
+<pre><code>## [1] 1
+## [1] 2</code></pre>
+<pre class="r"><code>all[[3]][1,]</code></pre>
+<pre><code>##                                title info
+## 1 Head – Disk Mechanical Tribologist &lt;NA&gt;
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  description
+## 1 Job Title: Head – Disk Mechanical Tribologist\nAbout the Role – You will:\nWork with groups engineers with your expertise in the areas of fluid dynamics, tribology, material science (thin films), thermodynamics, structural dynamics and mechanics, electromechanical, surface chemistry, small particle technology.\nDraw from experience with experimental design of experiments, data acquisition, time-series (FFT) analysis, material testing and characterization, particle doping and statistical analysis of data.\nAppreciate strengths and weaknesses of both modeling and experiments with an eye toward gaining fundamental understanding and validated performance that deliver optimal product designs is essential for success in this role.\nAbout Our Group\nOur group develops design solutions for micro- and nano-scale mechanical and thermo-mechanical applications in hard disk drives. In particular we deliver the air-bearing design and nano-scale head-media spacing recommendations for the recording head design that enables increased areal density capacity.\nAbout You\nStrong communication skills is a required to understand design requirements and communicate results and recommendations\nStrong teamwork skills to collaborate with engineering development colleagues and design customers\nYour Experience Includes:\nBachelor’s Degree and 8+ years of experience\nStrong academic background in mathematical, physical and/or engineering analysis\nExperience in data acquisition and time series analysis, optical methods such as LDV and thermal metrology or metrology (AFM, SEM, XPS, Raman, Auger).\nLocation: Normandale, MN\nTravel: 0-10%\nJob Family: Engineering Professional
+##         date
+## 1 2019-03-14
+##                                                                         link
+## 1 https://indeed.com/rc/clk?jk=0a091f58c028c6f8&amp;fccid=eb193642f8c64a12&amp;vjs=3</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><p>keywords rank and frequency. a.filter(articles，prepositions，conjunction). b.count and rank.</p></li>
 <li><p>word pairs rank.</p></li>
 <li><p>word cloud.</p></li>
 <li><p>keywords counts change with time. a.data scraping update everyday.* (need to know how to do it.)</p></li>
 </ol>
+</div>
+</div>
 
     </div>
   </article>
@@ -111,7 +211,22 @@
     </div>
     
 
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
     
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 
     
   </body>
