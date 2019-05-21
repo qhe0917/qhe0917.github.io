@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Universal</title>
-    <link>https://https://qhe0917.github.io/</link>
-    <description>Recent content on Universal</description>
+    <title>Blogs on Universal</title>
+    <link>https://https://qhe0917.github.io/blog/</link>
+    <description>Recent content in Blogs on Universal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://https://qhe0917.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://https://qhe0917.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -57,26 +57,6 @@ Documentation: Start from function documentation: roxygen2 an example:
       
       <guid>https://https://qhe0917.github.io/blog/1/01/01/stringr/</guid>
       <description> stringr - Let&amp;#39;s see what we can do with R!    About Job hunting Qing He The course I am taking    0 min read stringr 2019-04-10     RSS feed   Made with        </description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>https://https://qhe0917.github.io/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://https://qhe0917.github.io/contact/</guid>
-      <description>We are here to help you Are you curious about something? Do you have some kind of problem with our products? As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world. Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity.
-Please feel free to contact us, our customer service center is working for you 24&amp;frasl;7.</description>
-    </item>
-    
-    <item>
-      <title>FAQ</title>
-      <link>https://https://qhe0917.github.io/faq/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://https://qhe0917.github.io/faq/</guid>
-      <description>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-1. WHAT TO DO IF I HAVE STILL NOT RECEIVED THE ORDER? Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</description>
     </item>
     
   </channel>
