@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>job hunting</title>
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="QH, hugo, go">	
+  
+
+  
+  <meta name="description" content="Site template made by devcows using hugo">	
+  
+
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="/css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="/css/style.turquoise.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="/css/custom.css" rel="stylesheet">
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+  
+
+  <link href="/css/owl.carousel.css" rel="stylesheet">
+  <link href="/css/owl.theme.css" rel="stylesheet">
+
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Project with R!">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:title" content="job hunting">
+  <meta name="twitter:image" content="/">
+  <meta name="twitter:description" content="Site template made by devcows using hugo">
+
+  
+  <meta property="og:title" content="job hunting" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/post/job-hunting//" />
+  <meta property="og:image" content="" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/">
+                    <img src="/" alt="job hunting logo" class="hidden-xs hidden-sm">
+                    <img src="/" alt="job hunting logo" class="visible-xs visible-sm">
+                    <span class="sr-only">job hunting - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/">Home</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/blog/">Blog</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/contact/">Contact</a>
+                    
+                  </li>
+                  
+                  
+                  <li class="dropdown">
+                    
+                    <a href="https://github.com/qhe0917">GitHub</a>
+                    
+                  </li>
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>job hunting</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">April 3, 2019</p>
+
+                        <div id="post-content">
+                          
+
+
+<p>Yesterday, I was doing the job hunting on Indeed. But, there are so many job openings with so many information. Then I realized that, I can extract some information from these job descriptions, including the frequently mentioned keywords, word paires and word clouds for each searching key words. Later, I can write my resume that emphasizes my skills match the frequently mentioned keywords, it will be easier for me to modify my resume based on different job descriptions. Moreover, I can learn the skills that been frequenlty mentioned, before I graduate. It will also be easier for me to filter the jobs contained some keyworks or without some keywords. So, I deceide to write a function that can scrape the job descriptions from indeed based on different searching keywords. Then, do the text mining from the saved information.</p>
+<p>Here, is my attacking plan:</p>
+<ol style="list-style-type: decimal">
+<li>scrape website.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>using indeed api?</p></li>
+<li><p>backup plan, directly scrape date from website.</p></li>
+</ol>
+<p>This method will be slower, and the data cleaning will be more difficult.</p>
+<div id="apr-13-update" class="section level3">
+<h3>Apr 13 update</h3>
+<div id="first-step-check." class="section level4">
+<h4>First step check.</h4>
+<p>Can’t get the API from this website, so I end up using the web scraping to get all the information. The processing is slow especially when internet is slow. May need to add more constrains when searching with popular keywords. But by now, it works fine with the keywords I am interested in.</p>
+<pre class="r"><code>library(rvest)
+library(tidyverse)
+library(future)
+library(stringr)</code></pre>
+<pre class="r"><code>getjobs&lt;-function(keyword = &quot;nano raman data&quot;, loc = NULL){
+  #generate all pages links
+  fpage&lt;-function(keyword = keyword, loc = loc){
+    key&lt;- str_replace_all(keyword, &quot;\\s&quot;, &quot;+&quot;) 
+    url&lt;- str_replace_all(&quot;https://www.indeed.com/jobs?q=keyword&amp;start=&quot;, &quot;keyword&quot;,key ) %&gt;% paste0(loc)
+    old &lt;- 0
+    new &lt;- 1
+    i=0
+    link&lt;-NA
+    while (old != new){
+      old&lt;-new
+      i=i+10
+      urlnew &lt;- paste0(url, i)
+      new &lt;- read_html(urlnew) %&gt;% 
+        html_node(&quot;div.title &gt; a&quot;) %&gt;% 
+        html_attr(name=&quot;href&quot;) 
+      link&lt;-append(link,urlnew)
+      print(i/10)
+    }
+    return(link[-1])
+  }
+  
+  links&lt;-fpage(keyword,loc)
+  
+  #search job links from each page
+  fjob &lt;- function(url = NULL){
+    html &lt;- read_html(url) %&gt;% 
+      html_nodes(&quot;div.title &gt; a&quot;) %&gt;% 
+      html_attr(name=&quot;href&quot;) %&gt;% 
+      lapply(function(x) paste0(&quot;https://indeed.com&quot;,x))%&gt;% 
+      unlist %&gt;% 
+      data.frame() %&gt;% 
+      set_names(&quot;joblinks&quot;)
+  }
+  linksjob&lt;- sapply(links, fjob) %&gt;%
+    unlist() %&gt;% 
+    as.character() %&gt;% 
+    unique()
+  
+  #text scraping
+  jobtexts&lt;-function(link = NULL){
+    nodes &lt;- read_html(link) 
+    jobdes&lt;- html_nodes(nodes,&quot;#jobDescriptionText&quot;) %&gt;% 
+      html_text() 
+    jobdes &lt;- ifelse(is.null(jobdes), jobdes &lt;- NA, jobdes)
+    jobtitle&lt;- html_nodes(nodes,&quot;div.jobsearch-DesktopStickyContainer &gt; h3&quot;) %&gt;% 
+      html_text() 
+    jobtitle&lt;- ifelse(is.null(jobtitle), jobtitle &lt;- NA, jobtitle)
+    jobloc&lt;- html_nodes(nodes,&quot;div.icl-u-xs-mt--xs.icl-u-textColor--secondary.jobsearch-JobInfoHeader-subtitle.jobsearch-DesktopStickyContainer-subtitle&quot;) %&gt;% 
+      html_text()
+    jobloc&lt;- ifelse(is.null(jobloc), jobloc &lt;- NA, jobloc)
+    jobdate &lt;- html_nodes(nodes,&quot;div.jobsearch-JobMetadataFooter&quot;) %&gt;% 
+      html_text()
+    jobdate &lt;- if(is.null(jobdate)){NA} else {
+      if(str_detect(jobdate,&quot;days&quot;)){
+      as.character(Sys.Date()-as.integer(str_match(jobdate,&quot;\\d{1,}&quot;)))} else {
+        if(str_detect(jobdate,&quot;month&quot;)) {
+          as.character(Sys.Date()-as.integer(str_match(jobdate,&quot;\\d{1,}&quot;))*30)} else {
+            as.character(Sys.Date())}}}
+    a&lt;-c(jobtitle,jobloc,jobdes,jobdate,link)
+    return(a)
+  }
+  
+  textsall&lt;- sapply(linksjob, jobtexts) %&gt;% t() %&gt;% 
+    data.frame(row.names = NULL,stringsAsFactors =F) %&gt;% 
+    set_names(nm = c(&quot;title&quot;,&quot;info&quot;,&quot;description&quot;,&quot;date&quot;,&quot;link&quot;))
+  
+  allinfo &lt;- list(links,linksjob,textsall)
+  
+  return(allinfo)
+}
+
+all&lt;-getjobs(&quot;nano raman data&quot;)</code></pre>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3</code></pre>
+<pre class="r"><code>all[[3]][1,]</code></pre>
+<pre><code>##                                         title
+## 1 Crystalline Fiber Growth Research Scientist
+##                                                     info
+## 1 Azimuth Corporation13 reviews-Wright-Patterson AFB, OH
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            description
+## 1 Citizenship: Must be a US Citizen\nClearance Required: Favorable background investigationJob Summary\nWe are looking for a qualified candidate to support on-base research efforts in support of the Air Force Research Laboratory, Materials and Manufacturing Directorate. At the broadest level our research group plans, directs and conducts in house and extramural research and development of materials technologies with an emphasis of functional applications with sufficient maturity to transition to the warfighter.\nWe are looking for a motivated, creative mind with hands-on capability and experience to support customers in the Photonic materials branch at the Air Force Research Laboratories (AFRL) at Wright-Patterson Air Force Base (WPAFB) in Dayton, OH. We are looking for a research grade candidate versed in areas of physics, materials, chemistry, optics, and/or engineering.\nThis opportunity involves design and production of long crystalline fibers, including machine/process development for same. The optimization of optical characteristics through the understanding of constituent material properties and design of nano-to-micro scale structures will be involved. In particular, we seek to create new materials with novel optical responses to move beyond basic fiber structure to cladding/core structures.Roles and Responsibilities\nWork might include the following areas: nonlinear optics, simulation, computational, computation, electromagnetics, numerical calculation, optics, physics, waveguides, photonic crystals, raman scattering, wave propagation, lasers; solid-state materials; solid-state physics; materials science; solid-state materials; solid-state physics; structured materials; stratified media; optics; optical theory; optical design; computational science, programming, coding, computing, parallel computing.\nHigh quality (single) crystal fiber growth, including methods such as Pedestal Growth.\nGrowth system modification, re-design, and re-development to produce longer fibers.\nGrowth system modification, re-design, and re-development to produce coated fibers.\nPrecursor material/characteristics re-design and process redesign/re-development enable both of the prior goals.\nElectro-optic measurement and analysis: optical material characterization, laser performance measurements, non-linear characterization, and super-continuum measurement.\nData analysis and assessment; scientific report writing (journal articles).Education, Experience, and Skills\nPhD in Physics, Materials, Engineering, or similar.\n0+ years with PhD, or 5+ years with Master&#39;s degree.Physical Requirements / Travel\nMay require lifting up to 25 pounds.\nRequires visual and dextrous acuity to perform small scale scientific experiments, operate lab tools and equipment, and use a keyboard and monitor.\nMust be able to work in a lab environment that includes high power lasers, vacuum systems, clean rooms.\n0-10% travel within the Continental United States (CONUS).Azimuth Overview\nAzimuth is an award-winning Woman Owned Small Business specializing in providing research and development and professional services support to the federal government. Azimuth&#39;s agility, customer driven approach and our commitment to our employees allows us to meet and exceed our client goals. Excellence, Integrity, Accountability, Community and Humility are the core values of Azimuth as we continue to strive as a recognized leader in the management consulting community that both federal agencies and industry partners value doing business with. We are an organization that offers both our employees and clients an exceptional experience; our culture will be contagious, while always maintaining a genuine reputation.\nDisclaimer\nThe above information on this description has been designed to indicate the general nature and level of work performed by employees within this classification. It is not designed to contain or be interpreted as a comprehensive inventory of all duties, responsibilities, and qualifications required of employees assigned to this job.\nAzimuth Corporation does not discriminate in employment on the basis of race, color, religion, sex (including pregnancy and gender identity), national origin, political affiliation, sexual orientation, marital status, disability, genetic information, age, membership in an employee organization, retaliation, parental status, military service, or other non-merit factor.
+##         date
+## 1 2019-05-04
+##                                                                         link
+## 1 https://indeed.com/rc/clk?jk=6cb3a01b50d6f3ca&amp;fccid=8ae2dae2a32b293b&amp;vjs=3</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>keywords rank and frequency. a.filter(articles，prepositions，conjunction). b.count and rank.</p></li>
+<li><p>word pairs rank.</p></li>
+<li><p>word cloud.</p></li>
+<li><p>keywords counts change with time. a.data scraping update everyday.* (need to know how to do it.)</p></li>
+</ol>
+</div>
+</div>
+
+                        </div>
+                        
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+      <h3 class="panel-title">Search</h3>
+    </div>
+
+    <div class="panel-body">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" role="search">
+            <div class="input-group">
+                <input type="search" name="q" class="form-control" placeholder="Search">
+                <input type="hidden" name="sitesearch" value="/">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+        </div>
+        
+
+        <footer id="footer">
+    <div class="container">
+
+        
+
+        <div class="col-md-4 col-sm-6">
+
+            
+
+        </div>
+        
+
+        
+        <div class="col-md-4 col-sm-6">
+
+          <h4>Contact</h4>
+
+            <strong>Iowa State University</strong>
+        <br>Department of Agricultural and Biosystem Engineering
+        <br>3326 Elings Hall
+        <br>Ames, IA, 50010
+        <br>United State
+        <br>
+      </p>
+      
+
+
+            <a href="/contact" class="btn btn-small btn-template-main">Go to contact page</a>
+
+            <hr class="hidden-md hidden-lg hidden-sm">
+
+        </div>
+        
+        
+
+    </div>
+    
+</footer>
+
+
+
+
+
+
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-right">
+              Template by <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
+              
+
+              Ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+<script src="/js/hpneo.gmaps.js"></script>
+<script src="/js/gmaps.init.js"></script>
+<script src="/js/front.js"></script>
+
+
+<script src="/js/owl.carousel.min.js"></script>
+
+
+  </body>
+</html>

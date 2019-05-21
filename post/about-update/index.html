@@ -6,7 +6,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Categories</title>
+  <title>about update</title>
   <meta name="author" content="" />
 
   
@@ -58,14 +58,14 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@">
-  <meta name="twitter:title" content="Categories">
+  <meta name="twitter:title" content="about update">
   <meta name="twitter:image" content="/">
   <meta name="twitter:description" content="Site template made by devcows using hugo">
 
   
-  <meta property="og:title" content="Categories" />
+  <meta property="og:title" content="about update" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/categories//" />
+  <meta property="og:url" content="/post/about-update//" />
   <meta property="og:image" content="" />
 
 </head>
@@ -84,9 +84,9 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand home" href="/">
-                    <img src="/" alt="Categories logo" class="hidden-xs hidden-sm">
-                    <img src="/" alt="Categories logo" class="visible-xs visible-sm">
-                    <span class="sr-only">Categories - go to homepage</span>
+                    <img src="/" alt="about update logo" class="hidden-xs hidden-sm">
+                    <img src="/" alt="about update logo" class="visible-xs visible-sm">
+                    <span class="sr-only">about update - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -109,7 +109,7 @@
                   </li>
                   
                   
-                  <li class="dropdown active">
+                  <li class="dropdown">
                     
                     <a href="/blog/">Blog</a>
                     
@@ -164,7 +164,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Categories</h1>
+                <h1>about update</h1>
             </div>
         </div>
     </div>
@@ -173,23 +173,35 @@
 
         <div id="content">
             <div class="container">
+
                 <div class="row">
+
                     
 
-                    <div class="col-md-9" id="blog-listing-medium">
+                    <div class="col-md-9" id="blog-post">
 
+                        <p class="text-muted text-uppercase mb-small text-right">April 3, 2019</p>
+
+                        <div id="post-content">
+                          <p>Here I listed some functions that may be useful for wesite update:</p>
+
+<p>Create the content file and paste the path to create the content in the page.</p>
+
+<pre><code class="language-r">new_content(path, kind = &quot;&quot;, open = interactive())
+</code></pre>
+
+<p>Simply imput the title for the new update post, a rm file will be created. The file extention could be choosed by define the ext = &ldquo;.Rmd&rdquo; or &ldquo;.md&rdquo;.</p>
+
+<pre><code class="language-r">new_post(title, kind = &quot;&quot;, open = interactive(), author = getOption(&quot;blogdown.author&quot;), 
+    categories = NULL, tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
+    title_case = getOption(&quot;blogdown.title_case&quot;), subdir = getOption(&quot;blogdown.subdir&quot;, 
+        &quot;post&quot;), ext = getOption(&quot;blogdown.ext&quot;, &quot;.md&quot;))
+</code></pre>
+
+                        </div>
                         
                         
 
-                        <ul class="pager">
-                            
-                            <li class="previous disabled"><a href="#">&larr; Newer</a></li>
-                            
-
-                            
-                            <li class="next disabled"><a href="#">Older &rarr;</a></li>
-                            
-                        </ul>
                     </div>
                     
 
@@ -249,6 +261,7 @@
 
                 </div>
                 
+
             </div>
             
         </div>

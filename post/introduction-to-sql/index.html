@@ -6,7 +6,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Categories</title>
+  <title>Introduction to SQL</title>
   <meta name="author" content="" />
 
   
@@ -58,14 +58,14 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@">
-  <meta name="twitter:title" content="Categories">
+  <meta name="twitter:title" content="Introduction to SQL">
   <meta name="twitter:image" content="/">
   <meta name="twitter:description" content="Site template made by devcows using hugo">
 
   
-  <meta property="og:title" content="Categories" />
+  <meta property="og:title" content="Introduction to SQL" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/categories//" />
+  <meta property="og:url" content="/post/introduction-to-sql//" />
   <meta property="og:image" content="" />
 
 </head>
@@ -84,9 +84,9 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand home" href="/">
-                    <img src="/" alt="Categories logo" class="hidden-xs hidden-sm">
-                    <img src="/" alt="Categories logo" class="visible-xs visible-sm">
-                    <span class="sr-only">Categories - go to homepage</span>
+                    <img src="/" alt="Introduction to SQL logo" class="hidden-xs hidden-sm">
+                    <img src="/" alt="Introduction to SQL logo" class="visible-xs visible-sm">
+                    <span class="sr-only">Introduction to SQL - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -109,7 +109,7 @@
                   </li>
                   
                   
-                  <li class="dropdown active">
+                  <li class="dropdown">
                     
                     <a href="/blog/">Blog</a>
                     
@@ -164,7 +164,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Categories</h1>
+                <h1>Introduction to SQL</h1>
             </div>
         </div>
     </div>
@@ -173,23 +173,50 @@
 
         <div id="content">
             <div class="container">
+
                 <div class="row">
+
                     
 
-                    <div class="col-md-9" id="blog-listing-medium">
+                    <div class="col-md-9" id="blog-post">
 
+                        <p class="text-muted text-uppercase mb-small text-right">April 9, 2019</p>
+
+                        <div id="post-content">
+                          
+
+<p>I was planning to write an introduction about SQL to include some basic information about it, what does it do, what is the differences between other programming languages, and what is the advantages. But after I opened the wiki page, there are so many new terms in the description, each needs a further explanation for me to understand the content. Then I realize, it&rsquo;s almost impossible to understand all these terms unless I learn this language first and process some datasets with different languages. It is like I don&rsquo;t need all those concepts to learn R, and only after I have used R for a while until I can really understand the pros and cons of using R for data processing.
+So, I plan to study to SQL first and answer those questions later in this blog.</p>
+
+<h2 id="resources">Resources</h2>
+
+<p><a href="https://www.w3schools.com/Sql/sql_intro.asp">Introduction to SQL(a real introduction!)</a></p>
+
+<p><a href="https://cran.r-project.org/web/packages/RSQLite/vignettes/RSQLite.html">RSQLite, use SQL in Rstudio</a></p>
+
+<p>RSQLite is a package that contains SQL in it.
+The advange of using this package is we can work with data effciently dplyr. The dplyr works with the index to SQL db in R and extract or calculate the data after specifying the index in R. It is efficient to extract subset with complex restrictions.</p>
+
+<p>However, R is not capable of handling very big dataset. One disadvantage of using RSQLite instead of SQL directly is possiblity of overflowing. We may extract a subset without knowing its size. It is possible that the subset extracted is too large to be handled by R. In this case, we may need to use other methods to handle the data.</p>
+
+<p>It is not a best idea to create SQL database with R, since R is not capable of handling big database. The reason why we need to do that is sometimes we need to chop a big database into small chunk with R and save it as SQL, or attach multiple small db into a big sql.</p>
+
+<p>So, when we know that the subset of SQL db we are interested in can be handled by R, RSQLite is a very efficient way to directly visit SQL and do the statistical analysis from it.</p>
+
+<h3 id="that-s-all-i-learn-about-the-sql-and-r-interface-answers-to-the-questions-below-are-answered-here-https-www-w3schools-com-sql-sql-intro-asp">That&rsquo;s all I learn about the SQL and R interface, answers to the questions below are answered <a href="https://www.w3schools.com/Sql/sql_intro.asp">here</a>.</h3>
+
+<h4 id="sql-language-basics">SQL language basics.</h4>
+
+<h4 id="what-does-sql-do">What does SQL do?</h4>
+
+<h4 id="what-is-the-differences-between-other-programming-languages">What is the differences between other programming languages?</h4>
+
+<h4 id="what-is-the-advantages">What is the advantages?</h4>
+
+                        </div>
                         
                         
 
-                        <ul class="pager">
-                            
-                            <li class="previous disabled"><a href="#">&larr; Newer</a></li>
-                            
-
-                            
-                            <li class="next disabled"><a href="#">Older &rarr;</a></li>
-                            
-                        </ul>
                     </div>
                     
 
@@ -249,6 +276,7 @@
 
                 </div>
                 
+
             </div>
             
         </div>
